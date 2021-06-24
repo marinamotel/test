@@ -1,0 +1,10 @@
+ <script src="https://live.ipms247.com/booking/templates/resui/js/vendor/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script>
+var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+var eventer = window[eventMethod];
+var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+eventer(messageEvent,function(e) {
+if (e.data < 350 ) { jQuery(".re_califrame").height(350); }
+else { console.log("parent received message!: ",e.data); jQuery(".re_califrame").height(e.data); }
+},false); </script>
+<IFRAME SRC="https://live.ipms247.com/booking/availability_calender.php?HotelId=marinamotel&lang_code=en&langtext=English" width=100% HEIGHT=100 frameborder="0" name="re_califrame" class="re_califrame" id="re_califrame" scrolling="no"> </IFRAME>
